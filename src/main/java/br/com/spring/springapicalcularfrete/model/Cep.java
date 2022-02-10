@@ -25,6 +25,9 @@ public class Cep {
 	@NotBlank(message = "{cepDestino.not.blank}")
 	private String cepDestino;
 
+	@NotBlank(message = "{nomeDestinatario.not.blank}")
+	private String nomeDestinatario;
+
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date dataPrevistaEntrega;
 
@@ -35,12 +38,13 @@ public class Cep {
 
 	public Cep() {}
 
-	public Cep(Long id,  double peso, String cepOrigem, String cepDestino, Date dataPrevistaEntrega,
+	public Cep(Long id,  double peso, String cepOrigem, String nomeDestinatario, String cepDestino, Date dataPrevistaEntrega,
 			Date dataConsulta, double vlTotalFrete) {
 		this.id = id;
 		this.peso = peso;
 		this.cepOrigem = cepOrigem;
 		this.cepDestino = cepDestino;
+		this.nomeDestinatario = nomeDestinatario;
 		this.dataPrevistaEntrega = dataPrevistaEntrega;
 		this.dataConsulta = dataConsulta;
 		this.vlTotalFrete = vlTotalFrete;
@@ -78,6 +82,14 @@ public class Cep {
 		this.cepDestino = cepDestino;
 	}
 
+	public String getNomeDestinatario() {
+		return nomeDestinatario;
+	}
+
+	public void setNomeDestinatario(String nomeDestinatario) {
+		this.nomeDestinatario = nomeDestinatario;
+	}
+	
 	public Date getDataPrevistaEntrega() {
 		return dataPrevistaEntrega;
 	}
